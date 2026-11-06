@@ -1,0 +1,650 @@
+[
+ {
+  "group": "targets",
+  "item": "height",
+  "status": "PASS",
+  "detail": "239 mm (aim 240 mm +/- 5 %)"
+ },
+ {
+  "group": "targets",
+  "item": "crown_z",
+  "status": "PASS",
+  "detail": "0.759 H (reference 0.780 H +/- 12 %; walking 5.0 s: the fur's top)"
+ },
+ {
+  "group": "targets",
+  "item": "ear_span",
+  "status": "PASS",
+  "detail": "0.600 H (reference 0.540 H +/- 12 %; walking 0.0 s and sitting 0.0 s: ear tip to ear tip)"
+ },
+ {
+  "group": "targets",
+  "item": "head_width",
+  "status": "PASS",
+  "detail": "0.442 H (reference 0.440 H +/- 12 %; walking 0.0 s: cheeks (sitting 0.0 s: 0.42))"
+ },
+ {
+  "group": "targets",
+  "item": "eye_z",
+  "status": "PASS",
+  "detail": "0.560 H (reference 0.550 H +/- 12 %; walking 5.0 s side 0.51, 0.0 s front 0.63 (low camera))"
+ },
+ {
+  "group": "targets",
+  "item": "eye_spacing",
+  "status": "PASS",
+  "detail": "0.190 H (reference 0.190 H +/- 12 %; walking 0.0 s: centre to centre (sitting 0.18))"
+ },
+ {
+  "group": "targets",
+  "item": "eye_d",
+  "status": "PASS",
+  "detail": "0.127 H (reference 0.130 H +/- 12 %; sitting 0.0 s: the green ring with its white rim, 0.12; walking 0.0 s 0.14)"
+ },
+ {
+  "group": "targets",
+  "item": "chin_z",
+  "status": "PASS",
+  "detail": "0.389 H (reference 0.360 H +/- 12 %; walking 5.0 s: the muzzle's lowest point)"
+ },
+ {
+  "group": "targets",
+  "item": "back_z",
+  "status": "PASS",
+  "detail": "0.451 H (reference 0.450 H +/- 12 %; walking 5.0 s: the back's top behind the head)"
+ },
+ {
+  "group": "targets",
+  "item": "belly_z",
+  "status": "WARN",
+  "detail": "0.238 H (reference 0.190 H +/- 12 %; walking 5.0 s: the belly between the legs). DEVIATION: two XL330s a leg (thigh 42 mm, shin 34 mm + hoof) put the hips at 70 mm and the belly at 57 mm, 0.24 H: longer legs than the plush, kept"
+ },
+ {
+  "group": "targets",
+  "item": "body_length",
+  "status": "PASS",
+  "detail": "0.551 H (reference 0.500 H +/- 12 %; walking 5.0 s: rump to chest, head and tail left out)"
+ },
+ {
+  "group": "mass",
+  "item": "total",
+  "status": "PASS",
+  "detail": "625 g bottom-up (budget 650 g)"
+ },
+ {
+  "group": "printable",
+  "item": "largest part",
+  "status": "PASS",
+  "detail": "87 printed parts; largest body: 132 mm, on a 256 mm bed"
+ },
+ {
+  "group": "axis",
+  "item": "neck_pitch",
+  "status": "PASS",
+  "detail": "XL330_M288 0.0 mm off the axis"
+ },
+ {
+  "group": "axis",
+  "item": "head_yaw",
+  "status": "PASS",
+  "detail": "XL330_M288 0.0 mm off the axis"
+ },
+ {
+  "group": "axis",
+  "item": "head_roll",
+  "status": "PASS",
+  "detail": "XL330_M288 0.0 mm off the axis"
+ },
+ {
+  "group": "axis",
+  "item": "L_front_hip",
+  "status": "PASS",
+  "detail": "XL330_M288 0.0 mm off the axis"
+ },
+ {
+  "group": "axis",
+  "item": "L_front_knee",
+  "status": "PASS",
+  "detail": "XL330_M288 0.0 mm off the axis"
+ },
+ {
+  "group": "axis",
+  "item": "L_rear_hip",
+  "status": "PASS",
+  "detail": "XL330_M288 0.0 mm off the axis"
+ },
+ {
+  "group": "axis",
+  "item": "L_rear_knee",
+  "status": "PASS",
+  "detail": "XL330_M288 0.0 mm off the axis"
+ },
+ {
+  "group": "axis",
+  "item": "R_front_hip",
+  "status": "PASS",
+  "detail": "XL330_M288 0.0 mm off the axis"
+ },
+ {
+  "group": "axis",
+  "item": "R_front_knee",
+  "status": "PASS",
+  "detail": "XL330_M288 0.0 mm off the axis"
+ },
+ {
+  "group": "axis",
+  "item": "R_rear_hip",
+  "status": "PASS",
+  "detail": "XL330_M288 0.0 mm off the axis"
+ },
+ {
+  "group": "axis",
+  "item": "R_rear_knee",
+  "status": "PASS",
+  "detail": "XL330_M288 0.0 mm off the axis"
+ },
+ {
+  "group": "static",
+  "item": "zero pose",
+  "status": "PASS",
+  "detail": "0 overlaps"
+ },
+ {
+  "group": "covers",
+  "item": "motors clear of the covers",
+  "status": "PASS",
+  "detail": "0 cover / motor crossings"
+ },
+ {
+  "group": "connect",
+  "item": "body structure",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "body covers mounted",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "neck structure",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "neck covers mounted",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "yawlink structure",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "yawlink covers mounted",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "head structure",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "head covers mounted",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "L_front_thigh structure",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "L_front_thigh covers mounted",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "L_front_shin structure",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "L_front_shin covers mounted",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "L_rear_thigh structure",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "L_rear_thigh covers mounted",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "L_rear_shin structure",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "L_rear_shin covers mounted",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "R_front_thigh structure",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "R_front_thigh covers mounted",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "R_front_shin structure",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "R_front_shin covers mounted",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "R_rear_thigh structure",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "R_rear_thigh covers mounted",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "R_rear_shin structure",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "R_rear_shin covers mounted",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "neck_pitch axis",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "head_yaw axis",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "head_roll axis",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "L_front_hip axis",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "L_front_knee axis",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "L_rear_hip axis",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "L_rear_knee axis",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "R_front_hip axis",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "R_front_knee axis",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "R_rear_hip axis",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "R_rear_knee axis",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "skin",
+  "item": "battery 1S 1000 mAh (buy)",
+  "status": "PASS",
+  "detail": "0.00 % outside the skin"
+ },
+ {
+  "group": "skin",
+  "item": "bus board (buy)",
+  "status": "PASS",
+  "detail": "0.00 % outside the skin"
+ },
+ {
+  "group": "skin",
+  "item": "head_roll actuator (buy) XL330_M288",
+  "status": "PASS",
+  "detail": "0.00 % outside the skin"
+ },
+ {
+  "group": "skin",
+  "item": "head_roll rear horn (buy) FPX330-H101",
+  "status": "PASS",
+  "detail": "0.00 % outside the skin"
+ },
+ {
+  "group": "skin",
+  "item": "head_roll flange",
+  "status": "PASS",
+  "detail": "0.00 % outside the skin"
+ },
+ {
+  "group": "skin",
+  "item": "head bracket",
+  "status": "PASS",
+  "detail": "0.00 % outside the skin"
+ },
+ {
+  "group": "skin",
+  "item": "head crown post",
+  "status": "PASS",
+  "detail": "0.00 % outside the skin"
+ },
+ {
+  "group": "skin",
+  "item": "head face post",
+  "status": "PASS",
+  "detail": "0.02 % outside the skin"
+ },
+ {
+  "group": "sweep",
+  "item": "neck_pitch",
+  "status": "PASS",
+  "detail": "[-0.30, +0.27] rad clear"
+ },
+ {
+  "group": "sweep",
+  "item": "head_yaw",
+  "status": "PASS",
+  "detail": "[-1.00, +1.00] rad clear"
+ },
+ {
+  "group": "sweep",
+  "item": "head_roll",
+  "status": "PASS",
+  "detail": "[-0.35, +0.35] rad clear"
+ },
+ {
+  "group": "sweep",
+  "item": "L_front_hip",
+  "status": "PASS",
+  "detail": "[-0.60, +0.60] rad clear"
+ },
+ {
+  "group": "sweep",
+  "item": "L_front_knee",
+  "status": "PASS",
+  "detail": "[-1.30, +1.30] rad clear"
+ },
+ {
+  "group": "sweep",
+  "item": "L_rear_hip",
+  "status": "PASS",
+  "detail": "[-0.60, +0.60] rad clear"
+ },
+ {
+  "group": "sweep",
+  "item": "L_rear_knee",
+  "status": "PASS",
+  "detail": "[-1.30, +1.30] rad clear"
+ },
+ {
+  "group": "poses",
+  "item": "stand: balance",
+  "status": "PASS",
+  "detail": "CoM 32 mm inside what touches the floor"
+ },
+ {
+  "group": "poses",
+  "item": "stand: within limits",
+  "status": "PASS",
+  "detail": "yes"
+ },
+ {
+  "group": "poses",
+  "item": "stand: collisions",
+  "status": "PASS",
+  "detail": "none"
+ },
+ {
+  "group": "poses",
+  "item": "crouch: balance",
+  "status": "PASS",
+  "detail": "CoM 23 mm inside what touches the floor"
+ },
+ {
+  "group": "poses",
+  "item": "crouch: within limits",
+  "status": "PASS",
+  "detail": "yes"
+ },
+ {
+  "group": "poses",
+  "item": "crouch: collisions",
+  "status": "PASS",
+  "detail": "none"
+ },
+ {
+  "group": "poses",
+  "item": "nod down: balance",
+  "status": "PASS",
+  "detail": "CoM 32 mm inside what touches the floor"
+ },
+ {
+  "group": "poses",
+  "item": "nod down: within limits",
+  "status": "PASS",
+  "detail": "yes"
+ },
+ {
+  "group": "poses",
+  "item": "nod down: collisions",
+  "status": "PASS",
+  "detail": "none"
+ },
+ {
+  "group": "poses",
+  "item": "look up: balance",
+  "status": "PASS",
+  "detail": "CoM 32 mm inside what touches the floor"
+ },
+ {
+  "group": "poses",
+  "item": "look up: within limits",
+  "status": "PASS",
+  "detail": "yes"
+ },
+ {
+  "group": "poses",
+  "item": "look up: collisions",
+  "status": "PASS",
+  "detail": "none"
+ },
+ {
+  "group": "poses",
+  "item": "head tilt, looking round: balance",
+  "status": "PASS",
+  "detail": "CoM 28 mm inside what touches the floor"
+ },
+ {
+  "group": "poses",
+  "item": "head tilt, looking round: within limits",
+  "status": "PASS",
+  "detail": "yes"
+ },
+ {
+  "group": "poses",
+  "item": "head tilt, looking round: collisions",
+  "status": "PASS",
+  "detail": "none"
+ },
+ {
+  "group": "poses",
+  "item": "paw lifted (three legs): balance",
+  "status": "PASS",
+  "detail": "CoM 14 mm inside what touches the floor"
+ },
+ {
+  "group": "poses",
+  "item": "paw lifted (three legs): within limits",
+  "status": "PASS",
+  "detail": "yes"
+ },
+ {
+  "group": "poses",
+  "item": "paw lifted (three legs): collisions",
+  "status": "PASS",
+  "detail": "none"
+ },
+ {
+  "group": "poses",
+  "item": "trot, diagonal pair down: balance",
+  "status": "WARN",
+  "detail": "two hooves down: dynamic balance, not static"
+ },
+ {
+  "group": "poses",
+  "item": "trot, diagonal pair down: within limits",
+  "status": "PASS",
+  "detail": "yes"
+ },
+ {
+  "group": "poses",
+  "item": "trot, diagonal pair down: collisions",
+  "status": "PASS",
+  "detail": "none"
+ },
+ {
+  "group": "torque",
+  "item": "neck_pitch",
+  "status": "PASS",
+  "detail": "0.07 N m in 'nod down' vs rated 0.17 N m (1 x XL330_M288): 42 % used"
+ },
+ {
+  "group": "torque",
+  "item": "R_front_hip",
+  "status": "PASS",
+  "detail": "0.02 N m in 'crouch' vs rated 0.17 N m (1 x XL330_M288): 12 % used"
+ },
+ {
+  "group": "torque",
+  "item": "L_front_hip",
+  "status": "PASS",
+  "detail": "0.02 N m in 'crouch' vs rated 0.17 N m (1 x XL330_M288): 12 % used"
+ },
+ {
+  "group": "torque",
+  "item": "L_rear_hip",
+  "status": "PASS",
+  "detail": "0.02 N m in 'crouch' vs rated 0.17 N m (1 x XL330_M288): 12 % used"
+ },
+ {
+  "group": "torque",
+  "item": "R_rear_hip",
+  "status": "PASS",
+  "detail": "0.02 N m in 'crouch' vs rated 0.17 N m (1 x XL330_M288): 12 % used"
+ },
+ {
+  "group": "torque",
+  "item": "head_roll",
+  "status": "PASS",
+  "detail": "0.01 N m in 'head tilt, looking round' vs rated 0.17 N m (1 x XL330_M288): 4 % used"
+ },
+ {
+  "group": "torque",
+  "item": "R_rear_knee",
+  "status": "PASS",
+  "detail": "0.01 N m x 1.5 in 'trot, diagonal pair down' vs peak 0.52 N m (1 x XL330_M288): 2 % used"
+ },
+ {
+  "group": "torque",
+  "item": "L_front_knee",
+  "status": "PASS",
+  "detail": "0.01 N m x 1.5 in 'trot, diagonal pair down' vs peak 0.52 N m (1 x XL330_M288): 2 % used"
+ },
+ {
+  "group": "torque",
+  "item": "L_rear_knee",
+  "status": "PASS",
+  "detail": "0.00 N m in 'crouch' vs rated 0.17 N m (1 x XL330_M288): 1 % used"
+ },
+ {
+  "group": "torque",
+  "item": "R_front_knee",
+  "status": "PASS",
+  "detail": "0.00 N m in 'crouch' vs rated 0.17 N m (1 x XL330_M288): 1 % used"
+ },
+ {
+  "group": "torque",
+  "item": "head_yaw",
+  "status": "PASS",
+  "detail": "0.00 N m in 'look up' vs rated 0.17 N m (1 x XL330_M288): 0 % used"
+ }
+]
