@@ -105,3 +105,22 @@ The changes to the skill are listed at the end, with their size.
 - `gate.py 2` passes.
 - The Fusion model is in the hub.
 - Not done: the phase-3 detail pass (screws, wiring, connectors, a belly cover), hollow printed parts and print files, the makers' servo models in Fusion, STEP export, a gait or trained walk. Nothing ordered.
+
+## Changes to the skill
+
+Six commits in tinkerdroids/design-and-build-skills (`2e039a8..0f831a2`, pushed to main): **78 lines added and 4
+changed, in 7 of its 14 files**, against about 1,500 lines before (+5 %). Four sections are new:
+
+- "When the user is away" in SKILL.md
+- "A reference that isn't a robot" in phase 1
+- "A local video" in reference-images.md
+- "What forks as it is" in each-round.md
+
+The other changes are paragraphs and bullets in existing sections: quadruped layouts, a servo in each segment, phase 2
+for sitting and four-legged droids, the support found from the pose, drift, decal collisions, exposed parts and
+`--bad` cases, interfaces of three parts, load-bearing shells, Fusion's Direct-mode `.add()`, sorting clashes.
+
+The tools changed in this repo, not in the skill: `checks.py` (support, statics, decals, `load_bearing`,
+deviations, the `<=` interface fix), `mass_model.py` (`merge_into`), `figlib.py` (the ellipsoid guard).
+duck-droids' copy of `checks.py` has the same `!=` interface bug: a follow-up there.
+
