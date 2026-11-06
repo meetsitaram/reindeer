@@ -147,17 +147,22 @@ The changes to the skill are listed at the end, with their size.
 
 ## Changes to the skill
 
-Six commits in tinkerdroids/design-and-build-skills (`2e039a8..0f831a2`, pushed to main): **78 lines added and 4
-changed, in 7 of its 14 files**, against about 1,500 lines before (+5 %). Four sections are new:
+Eleven commits in tinkerdroids/design-and-build-skills (`2e039a8..9f8bfd2`, pushed to main): **111 lines added and 4
+changed, in 9 of its 14 files**, against about 1,500 lines before (+7 %). Six sections are new:
 
-- "When the user is away" in SKILL.md
-- "A reference that isn't a robot" in phase 1
+- "When the user is away" and "Never stop on a question you can answer" in SKILL.md
+- "A reference that isn't a robot" and "A character's expressive joints" in phase 1
 - "A local video" in reference-images.md
 - "What forks as it is" in each-round.md
 
-The other changes are paragraphs and bullets in existing sections: quadruped layouts, a servo in each segment, phase 2
-for sitting and four-legged droids, the support found from the pose, drift, decal collisions, exposed parts and
-`--bad` cases, interfaces of three parts, load-bearing shells, Fusion's Direct-mode `.add()`, sorting clashes.
+The rest are paragraphs and bullets in existing sections:
+- in phase 1: quadruped layouts, a servo in each segment
+- in phase 2: sitting and four-legged droids, what reads as a machine on a character, a walk by morning without training
+  here, the support found from the pose, drift
+- in phase 3: how each cover goes on
+- in checks.md: decal collisions, exposed parts and `--bad` cases, rerunning the cases after a part changes, unknown
+  case names, interfaces of three parts, load-bearing and merged shells
+- elsewhere: thin rods as plates, Fusion's Direct-mode `.add()`, sorting clashes
 
 The tools changed in this repo, not in the skill: `checks.py` (support, statics, decals, `load_bearing`,
 deviations, the `<=` interface fix), `mass_model.py` (`merge_into`), `figlib.py` (the ellipsoid guard).
