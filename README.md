@@ -4,13 +4,13 @@ A small walking reindeer droid, inspired by a plush reindeer in the user's two v
 spec with the `droid-from-spec` skill (github.com/tinkerdroids/design-and-build-skills), and it's that skill's first
 test on something that isn't a duck: see [SKILL_TEST.md](SKILL_TEST.md).
 
-- 24 cm to the antler tips, about 630 g bottom-up.
-- 11 ROBOTIS XL330-M288 servos on one bus: hip and knee on each leg, neck pitch, head yaw, head roll.
+- 24 cm to the antler tips, about 690 g bottom-up.
+- 13 ROBOTIS XL330-M288 servos on one bus: hip and knee on each leg, neck pitch, head yaw, head roll, a jaw, and both antlers together.
 - A Raspberry Pi Zero 2 W, a 1S pack and a bus board in the body.
-- Moves: walking (to train), crouching, lifting a paw, nodding, looking round, and a head tilt.
+- Moves: walking (a tuned gait in simulation; RL prepared to train elsewhere), crouching, sitting, lifting a paw, nodding, looking round, a head tilt, talking, and an antler nod.
 
-**Phase 2 of 6 (sim prototype).** Nothing has been printed or bought. The walk is untested: it needs a gait or a
-policy trained off this PC.
+**Phases 2-4 in part.** Nothing has been printed or bought. See `SKILL_TEST.md` for what is done and what is open,
+`BOM.md`, `docs/WIRING.md`, `docs/DETAIL_PASS.md`, `prints/` and `docs/videos/`.
 
 ## Run
 

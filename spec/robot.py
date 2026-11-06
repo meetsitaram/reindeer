@@ -276,7 +276,7 @@ head = [horn,
         cap('L antler tine 1', hp(-0.015, 0.016, 0.180), hp(-0.012, 0.036, 0.196), 0.0052 * K, GREEN, 'decal', color_R=RED),
         cap('L antler tine 2', hp(-0.020, 0.020, 0.196), hp(-0.019, 0.040, 0.212), 0.0050 * K, GREEN, 'decal', color_R=RED),
         box('head bracket', (XROLL - 0.0005, -0.0135, ZROLL - 0.011), (XROLL + 0.0025, 0.0135, ZROLL + 0.012), DARK),   # round 8: narrower, clear of the antler servo; its crown post gone for the antlers' bar
-        box('head face post', (XROLL + 0.002, -0.005, ZROLL - 0.008), (HC[0] + HR[0] - 0.0012, 0.005, ZROLL - 0.002), DARK),
+        box('head face post', (XROLL + 0.002, -0.005, ZROLL - 0.008), (HC[0] + HR[0] - 0.0030, 0.005, ZROLL - 0.002), DARK),   # round 8: 1.2 mm under the face showed as a seam
         ]
 # round 8 (the user: "there is no mouth action which is important"; "make the two antlers move together with another servo")
 # The mouth: the muzzle's lower part is a jaw on its own XL330, its case low in the face, its shaft across (y) behind the
@@ -288,7 +288,7 @@ head += [case,
          box('jaw cradle post', (XJ - 0.022, -0.004, ZJ + 0.0120), (XJ - 0.016, 0.004, ZROLL - 0.0075), DARK, exposed=True),
          cut(box('L jaw slot', (XJ - 0.016, 0.0130, 0.090), (XJ + 0.024, 0.0190, ZJ - 0.008)), 'muzzle', 'cranium')]
 jaw = [horn, rear,
-       plate('L jaw plate', 0.0145, 0.003, [(XJ, ZJ, 0.0095), (XJ + 0.008, 0.0985, 0.005)], DARK, exposed=True),   # seen in the mouth when it opens
+       plate('L jaw plate', 0.0145, 0.003, [(XJ, ZJ, 0.0095), (XJ + 0.008, 0.0985, 0.005)], WHITE, exposed=True),   # seen in the mouth and through the muzzle's slots: the muzzle's white
        loft('jaw', [(0.056, 0.0975, 0.0, 0.0025, 0.012, 2.2), (0.062, 0.0975, 0.0, 0.0050, 0.018, 2.2),   # its back low: behind the hinge it rises as the mouth opens
                     (0.074, 0.0980, 0.0, 0.0060, 0.0205, 2.2), (0.087, 0.0990, 0.0, 0.0045, 0.0160, 2.2),
                     (0.094, 0.1000, 0.0, 0.0015, 0.0070, 2.0)], WHITE, along='x', load_bearing=True),

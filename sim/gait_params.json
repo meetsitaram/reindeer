@@ -1,0 +1,79 @@
+{
+ "params": {
+  "f": 3.0,
+  "ah_f": 0.40824938981674913,
+  "ah_r": 0.39545264710250944,
+  "ak_f": 0.7032901808489493,
+  "ak_r": 1.0,
+  "crouch": 0.0,
+  "oh_f": 0.23144668825857356,
+  "oh_r": -0.006919806274904627,
+  "psi": 1.8309373218228808
+ },
+ "knee_sign": [
+  1,
+  1
+ ],
+ "result": {
+  "score": 1.5886308609161637,
+  "speed": 0.39060946838680743,
+  "dx": 1.6413409861612365,
+  "dy": -0.004821297060562912,
+  "yaw_rad": -0.09261495076415041,
+  "fell": false,
+  "saturated_share": 0.9133745835316752,
+  "t": 5.001999999999671
+ },
+ "search": {
+  "method": "CMA-ES (numpy), unit box",
+  "population": 16,
+  "generations": 285,
+  "evaluations": 4560,
+  "minutes_this_run": 15.6,
+  "minutes_all_runs": 19.7,
+  "run_s": 5.0,
+  "timestep": 0.002,
+  "kp": 6.0,
+  "note": "position servos at kp 6.0 N m/rad, limited to stall: an estimate; duck-droids trainer uses 0.55 (microduck identification)"
+ },
+ "spec_joints": [
+  "neck_pitch",
+  "head_yaw",
+  "head_roll",
+  "jaw",
+  "antlers",
+  "L_front_hip",
+  "L_front_knee",
+  "L_rear_hip",
+  "L_rear_knee",
+  "R_front_hip",
+  "R_front_knee",
+  "R_rear_hip",
+  "R_rear_knee"
+ ],
+ "video": {
+  "params": {
+   "f": 3.0,
+   "ah_f": 0.24494963389004948,
+   "ah_r": 0.23727158826150566,
+   "ak_f": 0.4219741085093696,
+   "ak_r": 0.6,
+   "crouch": 0.0,
+   "oh_f": 0.23144668825857356,
+   "oh_r": -0.006919806274904627,
+   "psi": 1.8309373218228808
+  },
+  "amplitude_scale": 0.6,
+  "result_1ms_10s": {
+   "score": 1.911051362263748,
+   "speed": 0.19692612364195503,
+   "dx": 1.9694581625430843,
+   "dy": -0.07361646852876552,
+   "yaw_rad": -0.06880763666744243,
+   "fell": false,
+   "saturated_share": 0.3631636836316278,
+   "t": 10.800999999999453
+  },
+  "why": "the search best (search params above) saturates a servo 91 % of the time and falls at 9.7 s at 1 ms; 0.6 x its amplitudes, picked by hand from 16 evaluations at 1 ms over 10 s (5 s of wall time, inside the 20-minute cap), keeps it up with 36 % saturation, 7 cm side drift and 0.07 rad yaw"
+ }
+}

@@ -113,14 +113,23 @@ The changes to the skill are listed at the end, with their size.
 | 51 | `spec/gates.json` for a project's own gate lists | W | phases 3 and 4 list this repo's tools | |
 | 52 | The BOM, with what isn't confirmed under one heading | W | from duck-droids' listings (the same parts), every line "confirm before ordering"; the battery an open item with its size limit | |
 
-## What the reindeer is now
+## What the reindeer is now (round 8)
 
-- A walking quadruped, 24 cm to the antler tips: 11 ROBOTIS XL330-M288 servos (hip and knee a leg, neck pitch, head yaw, head roll), a Pi Zero 2 W, about 630 g bottom-up.
-- `python -I tools/checks.py`: 108 checks, 0 failing, 2 warnings. The belly sits at 0.24 H against the plush's 0.19 (two servos a leg); a trot has only two hooves down, so its balance is dynamic.
-- All 10 broken designs fail as they should.
-- `gate.py 2` passes.
-- The Fusion model is in the hub.
-- Not done: the phase-3 detail pass (screws, wiring, connectors, a belly cover), hollow printed parts and print files, the makers' servo models in Fusion, STEP export, a gait or trained walk. Nothing ordered.
+- **The robot:** a walking quadruped, 24 cm to the antler tips, with 13 ROBOTIS XL330-M288s: hip and knee on each leg,
+  neck pitch, head yaw, head roll, a jaw, and the antlers. About 690 g bottom-up.
+- **Checks:** 128, 0 failing, 2 warnings (the belly is higher than the plush's, with its reason; a trot balances
+  dynamically). All 10 broken designs fail as they should.
+- **Simulation:** `sim_stand` passes.
+- **Fusion:** the model is in the hub, with its STEP (127 solids, matching the bodies) and `.f3d` in `cad/`.
+- **Paperwork:** 87 print files in `prints/`, `BOM.md` (open items listed), `docs/WIRING.md`, `docs/DETAIL_PASS.md`.
+- **Not done:**
+  - screws for the printed parts
+  - lead routes
+  - the battery's choice
+  - rounded, joined print pieces
+  - the makers' servo models in Fusion
+  - any printing or ordering
+- **Walking:** a tuned parametric gait in simulation; an RL policy is prepared to train elsewhere.
 
 ## Changes to the skill
 
