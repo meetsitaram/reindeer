@@ -1,0 +1,51 @@
+{
+ "_about": "The reference: the user's two videos of a plush reindeer (C:/Users/meets/Downloads/reindeer.mp4, a 6 s turntable of it sitting; reindeer_walking.mp4, 6 s of the same plush standing and walking on four legs, 464 x 688). Frames are kept local (%TEMP%/figrefs/reindeer, tools/reference_frames.py), never in the repo. Fractions of the height H, floor to antler tip, measured by eye on a 25 px grid. Standing: walking 5.0 s (near side, about 3/4: H = 520 px from the hoof at y 575 to the antler at 55) and 0.0 s (front, camera low and close: tops read high, so eye heights differ, 0.51 H side and 0.63 H front; the side's is used, nudged). Head width and eye spacing from the sitting 0.0 s front frame and the walking 0.0 s front frame, which agree. The droid is an original design inspired by it: no brand tag, no copied geometry.",
+ "height_m": 0.24,
+ "height_tol": 0.05,
+ "tol": 0.12,
+ "fractions": {
+  "crown_z": {
+   "v": 0.78,
+   "src": "walking 5.0 s: the fur's top"
+  },
+  "ear_span": {
+   "v": 0.54,
+   "src": "walking 0.0 s and sitting 0.0 s: ear tip to ear tip"
+  },
+  "head_width": {
+   "v": 0.44,
+   "src": "walking 0.0 s: cheeks (sitting 0.0 s: 0.42)"
+  },
+  "eye_z": {
+   "v": 0.55,
+   "src": "walking 5.0 s side 0.51, 0.0 s front 0.63 (low camera)"
+  },
+  "eye_spacing": {
+   "v": 0.19,
+   "src": "walking 0.0 s: centre to centre (sitting 0.18)"
+  },
+  "eye_d": {
+   "v": 0.13,
+   "src": "sitting 0.0 s: the green ring with its white rim, 0.12; walking 0.0 s 0.14"
+  },
+  "chin_z": {
+   "v": 0.36,
+   "src": "walking 5.0 s: the muzzle's lowest point"
+  },
+  "back_z": {
+   "v": 0.45,
+   "src": "walking 5.0 s: the back's top behind the head"
+  },
+  "belly_z": {
+   "v": 0.19,
+   "src": "walking 5.0 s: the belly between the legs",
+   "deviation": "two XL330s a leg (thigh 42 mm, shin 34 mm + hoof) put the hips at 70 mm and the belly at 57 mm, 0.24 H: longer legs than the plush, kept"
+  },
+  "body_length": {
+   "v": 0.5,
+   "src": "walking 5.0 s: rump to chest, head and tail left out"
+  }
+ },
+ "mass_budget_kg": 0.72,
+ "parts_goal": "13 servos (round 8: a jaw and the antlers added), under 60 printed parts"
+}

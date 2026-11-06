@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+# panels holding the reference video's frames: not ours to publish
+reports/compare/
+spec/droid_state_*.json
