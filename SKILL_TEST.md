@@ -19,10 +19,10 @@ holds the quadruped.
 
 | | entries | share |
 |---|---|---|
-| worked as written (W) | 26 | **50 %** |
-| needed a workaround (A) | 16 | 31 % |
-| missing or wrong (M) | 10 | 19 % |
-| total used | 52 | |
+| worked as written (W) | 30 | **52 %** |
+| needed a workaround (A) | 18 | 31 % |
+| missing or wrong (M) | 10 | 17 % |
+| total used | 58 | |
 
 Not used this run: the green-background gap render, the phase-3 detail pass (screws, wiring, connectors), STEP export,
 phases 5 and 6, agentic-team. Those weren't reached in the time, so they aren't scored.
@@ -113,6 +113,17 @@ The changes to the skill are listed at the end, with their size.
 | 51 | `spec/gates.json` for a project's own gate lists | W | phases 3 and 4 list this repo's tools | |
 | 52 | The BOM, with what isn't confirmed under one heading | W | from duck-droids' listings (the same parts), every line "confirm before ordering"; the battery an open item with its size limit | |
 
+### Phases 3, 4 and 6 (run by two helper agents in parallel with the design, briefed with the skill's files)
+
+| # | instruction | | what happened | fix / change to the skill |
+|---|---|---|---|---|
+| 53 | The build order as data, each part's path from clear space (`tools/assembly.py`) | W | 76 steps, 107 parts, 0 failing; `--bad path` (a hip servo pushed down through its closed thigh) fails. It found what no check had: **no one-piece cover can close round a servo** (body, head, thighs, shins), and a one-piece body can't go on at all, as its belly strip sweeps through the thighs. Covers are now printed in halves in the order; the spec still draws them whole | phases/3: decide each cover's split with its servo; a fix the spec owes (open item) |
+| 54 | An unknown `--bad` case name | A | `assembly.py --bad hip` printed "NOT CAUGHT": a typo reads as a weak check | checks.md: refuse an unknown case |
+| 55 | assembly-videos.md: portrait, labels, empty frames, look at the frames | W | the reveal (30 s, 1080 x 1920, least-filled frame 7.4 %) and the build (160 s, 0 empty stretches). From the frames, the helper fixed a robot too small in the portrait frame, a lone servo filling the frame, a leg bench under the body, and wrong labels. Left: hooves as slivers at the top edge during the right legs' steps, and two labels over the legs, not over the work | |
+| 56 | Parts layout from the model's bodies, counts against the build | W | 107 parts, the same as the build order | |
+| 57 | A gate per phase (`gate.py 3`, `gate.py 4`) | W | both PASS with this repo's `spec/gates.json` | |
+| 58 | Videos go last (phase 6) | A | the user asked for the videos tonight, before the user's review of phase 2's look, so they'll be made again after the review | |
+
 ## What the reindeer is now (round 8)
 
 - **The robot:** a walking quadruped, 24 cm to the antler tips, with 13 ROBOTIS XL330-M288s: hip and knee on each leg,
@@ -122,7 +133,10 @@ The changes to the skill are listed at the end, with their size.
 - **Simulation:** `sim_stand` passes.
 - **Fusion:** the model is in the hub, with its STEP (127 solids, matching the bodies) and `.f3d` in `cad/`.
 - **Paperwork:** 87 print files in `prints/`, `BOM.md` (open items listed), `docs/WIRING.md`, `docs/DETAIL_PASS.md`.
+- **Build order:** 76 steps, 0 failing, with its broken design caught. Gates 2, 3 and 4 pass their scripted parts.
+- **Videos:** the 30 s reveal, the 160 s build, and the stand-up, sit, walk and moves clips, in `docs/videos/`.
 - **Not done:**
+  - covers split into halves in the spec (the build order already prints them so)
   - screws for the printed parts
   - lead routes
   - the battery's choice
