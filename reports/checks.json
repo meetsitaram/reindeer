@@ -45,19 +45,19 @@
   "group": "targets",
   "item": "chin_z",
   "status": "PASS",
-  "detail": "0.389 H (reference 0.360 H +/- 12 %; walking 5.0 s: the muzzle's lowest point)"
+  "detail": "0.384 H (reference 0.360 H +/- 12 %; walking 5.0 s: the muzzle's lowest point)"
  },
  {
   "group": "targets",
   "item": "back_z",
   "status": "PASS",
-  "detail": "0.451 H (reference 0.450 H +/- 12 %; walking 5.0 s: the back's top behind the head)"
+  "detail": "0.455 H (reference 0.450 H +/- 12 %; walking 5.0 s: the back's top behind the head)"
  },
  {
   "group": "targets",
   "item": "belly_z",
   "status": "WARN",
-  "detail": "0.238 H (reference 0.190 H +/- 12 %; walking 5.0 s: the belly between the legs). DEVIATION: two XL330s a leg (thigh 42 mm, shin 34 mm + hoof) put the hips at 70 mm and the belly at 57 mm, 0.24 H: longer legs than the plush, kept"
+  "detail": "0.237 H (reference 0.190 H +/- 12 %; walking 5.0 s: the belly between the legs). DEVIATION: two XL330s a leg (thigh 42 mm, shin 34 mm + hoof) put the hips at 70 mm and the belly at 57 mm, 0.24 H: longer legs than the plush, kept"
  },
  {
   "group": "targets",
@@ -69,13 +69,13 @@
   "group": "mass",
   "item": "total",
   "status": "PASS",
-  "detail": "625 g bottom-up (budget 650 g)"
+  "detail": "690 g bottom-up (budget 720 g)"
  },
  {
   "group": "printable",
   "item": "largest part",
   "status": "PASS",
-  "detail": "87 printed parts; largest body: 132 mm, on a 256 mm bed"
+  "detail": "106 printed parts; largest body: 132 mm, on a 256 mm bed"
  },
  {
   "group": "axis",
@@ -92,6 +92,18 @@
  {
   "group": "axis",
   "item": "head_roll",
+  "status": "PASS",
+  "detail": "XL330_M288 0.0 mm off the axis"
+ },
+ {
+  "group": "axis",
+  "item": "jaw",
+  "status": "PASS",
+  "detail": "XL330_M288 0.0 mm off the axis"
+ },
+ {
+  "group": "axis",
+  "item": "antlers",
   "status": "PASS",
   "detail": "XL330_M288 0.0 mm off the axis"
  },
@@ -200,6 +212,30 @@
  {
   "group": "connect",
   "item": "head covers mounted",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "jaw structure",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "jaw covers mounted",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "antlers structure",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "antlers covers mounted",
   "status": "PASS",
   "detail": ""
  },
@@ -319,6 +355,18 @@
  },
  {
   "group": "connect",
+  "item": "jaw axis",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
+  "item": "antlers axis",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "group": "connect",
   "item": "L_front_hip axis",
   "status": "PASS",
   "detail": ""
@@ -367,7 +415,7 @@
  },
  {
   "group": "skin",
-  "item": "battery 1S 1000 mAh (buy)",
+  "item": "battery 2S, at most 44 x 30 x 8 mm (buy)",
   "status": "PASS",
   "detail": "0.00 % outside the skin"
  },
@@ -403,21 +451,51 @@
  },
  {
   "group": "skin",
-  "item": "head crown post",
+  "item": "head face post",
   "status": "PASS",
   "detail": "0.00 % outside the skin"
  },
  {
   "group": "skin",
-  "item": "head face post",
+  "item": "antlers actuator (buy) XL330_M288",
   "status": "PASS",
-  "detail": "0.02 % outside the skin"
+  "detail": "0.00 % outside the skin"
+ },
+ {
+  "group": "skin",
+  "item": "antler cradle",
+  "status": "PASS",
+  "detail": "0.00 % outside the skin"
+ },
+ {
+  "group": "skin",
+  "item": "antler cradle post",
+  "status": "PASS",
+  "detail": "0.00 % outside the skin"
+ },
+ {
+  "group": "skin",
+  "item": "antlers flange",
+  "status": "PASS",
+  "detail": "0.00 % outside the skin"
+ },
+ {
+  "group": "skin",
+  "item": "antler horn plate",
+  "status": "PASS",
+  "detail": "0.00 % outside the skin"
+ },
+ {
+  "group": "skin",
+  "item": "antler bar arm",
+  "status": "PASS",
+  "detail": "0.00 % outside the skin"
  },
  {
   "group": "sweep",
   "item": "neck_pitch",
   "status": "PASS",
-  "detail": "[-0.30, +0.27] rad clear"
+  "detail": "[-0.28, +0.18] rad clear"
  },
  {
   "group": "sweep",
@@ -429,13 +507,25 @@
   "group": "sweep",
   "item": "head_roll",
   "status": "PASS",
-  "detail": "[-0.35, +0.35] rad clear"
+  "detail": "[-0.30, +0.30] rad clear"
+ },
+ {
+  "group": "sweep",
+  "item": "jaw",
+  "status": "PASS",
+  "detail": "[-0.05, +0.45] rad clear"
+ },
+ {
+  "group": "sweep",
+  "item": "antlers",
+  "status": "PASS",
+  "detail": "[-0.15, +0.15] rad clear"
  },
  {
   "group": "sweep",
   "item": "L_front_hip",
   "status": "PASS",
-  "detail": "[-0.60, +0.60] rad clear"
+  "detail": "[-0.50, +0.50] rad clear"
  },
  {
   "group": "sweep",
@@ -447,7 +537,7 @@
   "group": "sweep",
   "item": "L_rear_hip",
   "status": "PASS",
-  "detail": "[-0.60, +0.60] rad clear"
+  "detail": "[-0.50, +0.50] rad clear"
  },
  {
   "group": "sweep",
@@ -477,7 +567,7 @@
   "group": "poses",
   "item": "crouch: balance",
   "status": "PASS",
-  "detail": "CoM 23 mm inside what touches the floor"
+  "detail": "CoM 18 mm inside what touches the floor"
  },
  {
   "group": "poses",
@@ -531,7 +621,7 @@
   "group": "poses",
   "item": "head tilt, looking round: balance",
   "status": "PASS",
-  "detail": "CoM 28 mm inside what touches the floor"
+  "detail": "CoM 26 mm inside what touches the floor"
  },
  {
   "group": "poses",
@@ -547,9 +637,27 @@
  },
  {
   "group": "poses",
+  "item": "chatting: mouth open, antlers back: balance",
+  "status": "PASS",
+  "detail": "CoM 32 mm inside what touches the floor"
+ },
+ {
+  "group": "poses",
+  "item": "chatting: mouth open, antlers back: within limits",
+  "status": "PASS",
+  "detail": "yes"
+ },
+ {
+  "group": "poses",
+  "item": "chatting: mouth open, antlers back: collisions",
+  "status": "PASS",
+  "detail": "none"
+ },
+ {
+  "group": "poses",
   "item": "paw lifted (three legs): balance",
   "status": "PASS",
-  "detail": "CoM 14 mm inside what touches the floor"
+  "detail": "CoM 28 mm inside what touches the floor"
  },
  {
   "group": "poses",
@@ -585,49 +693,55 @@
   "group": "torque",
   "item": "neck_pitch",
   "status": "PASS",
-  "detail": "0.07 N m in 'nod down' vs rated 0.17 N m (1 x XL330_M288): 42 % used"
- },
- {
-  "group": "torque",
-  "item": "R_front_hip",
-  "status": "PASS",
-  "detail": "0.02 N m in 'crouch' vs rated 0.17 N m (1 x XL330_M288): 12 % used"
- },
- {
-  "group": "torque",
-  "item": "L_front_hip",
-  "status": "PASS",
-  "detail": "0.02 N m in 'crouch' vs rated 0.17 N m (1 x XL330_M288): 12 % used"
- },
- {
-  "group": "torque",
-  "item": "L_rear_hip",
-  "status": "PASS",
-  "detail": "0.02 N m in 'crouch' vs rated 0.17 N m (1 x XL330_M288): 12 % used"
+  "detail": "0.08 N m in 'nod down' vs rated 0.17 N m (1 x XL330_M288): 46 % used"
  },
  {
   "group": "torque",
   "item": "R_rear_hip",
   "status": "PASS",
-  "detail": "0.02 N m in 'crouch' vs rated 0.17 N m (1 x XL330_M288): 12 % used"
+  "detail": "0.03 N m in 'crouch' vs rated 0.17 N m (1 x XL330_M288): 16 % used"
+ },
+ {
+  "group": "torque",
+  "item": "L_rear_hip",
+  "status": "PASS",
+  "detail": "0.03 N m in 'crouch' vs rated 0.17 N m (1 x XL330_M288): 16 % used"
+ },
+ {
+  "group": "torque",
+  "item": "R_front_hip",
+  "status": "PASS",
+  "detail": "0.03 N m in 'crouch' vs rated 0.17 N m (1 x XL330_M288): 16 % used"
+ },
+ {
+  "group": "torque",
+  "item": "L_front_hip",
+  "status": "PASS",
+  "detail": "0.03 N m in 'crouch' vs rated 0.17 N m (1 x XL330_M288): 16 % used"
+ },
+ {
+  "group": "torque",
+  "item": "antlers",
+  "status": "PASS",
+  "detail": "0.02 N m in 'look up' vs rated 0.17 N m (1 x XL330_M288): 11 % used"
  },
  {
   "group": "torque",
   "item": "head_roll",
   "status": "PASS",
-  "detail": "0.01 N m in 'head tilt, looking round' vs rated 0.17 N m (1 x XL330_M288): 4 % used"
- },
- {
-  "group": "torque",
-  "item": "R_rear_knee",
-  "status": "PASS",
-  "detail": "0.01 N m x 1.5 in 'trot, diagonal pair down' vs peak 0.52 N m (1 x XL330_M288): 2 % used"
+  "detail": "0.01 N m in 'stand' vs rated 0.17 N m (1 x XL330_M288): 4 % used"
  },
  {
   "group": "torque",
   "item": "L_front_knee",
   "status": "PASS",
-  "detail": "0.01 N m x 1.5 in 'trot, diagonal pair down' vs peak 0.52 N m (1 x XL330_M288): 2 % used"
+  "detail": "0.01 N m x 1.5 in 'trot, diagonal pair down' vs peak 0.52 N m (1 x XL330_M288): 4 % used"
+ },
+ {
+  "group": "torque",
+  "item": "R_rear_knee",
+  "status": "PASS",
+  "detail": "0.01 N m x 1.5 in 'trot, diagonal pair down' vs peak 0.52 N m (1 x XL330_M288): 4 % used"
  },
  {
   "group": "torque",
@@ -645,6 +759,12 @@
   "group": "torque",
   "item": "head_yaw",
   "status": "PASS",
-  "detail": "0.00 N m in 'look up' vs rated 0.17 N m (1 x XL330_M288): 0 % used"
+  "detail": "0.00 N m in 'look up' vs rated 0.17 N m (1 x XL330_M288): 1 % used"
+ },
+ {
+  "group": "torque",
+  "item": "jaw",
+  "status": "PASS",
+  "detail": "0.00 N m in 'look up' vs rated 0.17 N m (1 x XL330_M288): 1 % used"
  }
 ]

@@ -19,10 +19,10 @@ holds the quadruped.
 
 | | entries | share |
 |---|---|---|
-| worked as written (W) | 21 | **51 %** |
-| needed a workaround (A) | 12 | 29 % |
-| missing or wrong (M) | 8 | 20 % |
-| total used | 41 | |
+| worked as written (W) | 26 | **50 %** |
+| needed a workaround (A) | 16 | 31 % |
+| missing or wrong (M) | 10 | 19 % |
+| total used | 52 | |
 
 Not used this run: the green-background gap render, the phase-3 detail pass (screws, wiring, connectors), STEP export,
 phases 5 and 6, agentic-team. Those weren't reached in the time, so they aren't scored.
@@ -96,6 +96,22 @@ The changes to the skill are listed at the end, with their size.
 | 39 | M | A shell that is structure: the thighs hold their servos and the body's side wall carries each hip's outer boss. The connect check counts only rigid parts | `load_bearing` on a shell (checks.py) |
 | 40 | M | Shells that print as one (the haunches on the body) were counted as separate whole walls: 32 g too heavy | `merge_into` in mass_model.py |
 | 41 | M | The sweep check compared a joint's interface with `!=`, so an interface naming three parts (with the rear horn) matched nothing, and every joint collided "at 0" | `<=` (also in duck-droids' copy: a follow-up there) |
+
+### Round 8 (the user's review: "the droid looks a bit ugly", "there is no mouth action which is important", "make the two antlers move together with another servo")
+
+| # | instruction | | what happened | fix / change to the skill |
+|---|---|---|---|---|
+| 42 | Phase 1: the joints, from the moves wanted | M | the concept listed the walk and the head's moves; the user had to ask for a mouth. A character droid's charm is in its expressive joints (mouth, ears, antlers, tail), and nothing in the skill asks for them | phases/1: list the character's expressive moves with the joints, and decide them before the layout |
+| 43 | Rule 4: judge the look in pictures | M | it looked fine to me; the user called it ugly. In the pictures: legs as stacked boxes (superellipse n 6), black hubs at every hip, a bib cut into pieces by the leg pockets. Fixed: n 4.5 legs, fawn hubs and knee caps, a clean oval bib, a fuller body. My own fix, floating fur tufts over the antler slots, read as hats in the next picture: darker burrs, smaller | phases/2: what reads as a machine on a character (boxy limbs, hardware in a contrast colour, cut decals) |
+| 44 | covers check | A | the muzzle and cranium print as one piece, but the check gave each its own wall, so a servo inside both "crossed" a wall that isn't printed | `merge_into` now also takes the inner wall out of the covers and collision checks |
+| 45 | spec-patterns: capsules for rods | A | trimesh's capsules under about 3 mm radius aren't closed solids: the checks refused them | spec-patterns.md: plates or boxes for thin rods |
+| 46 | Each servo held at both ends, or the reason it isn't | W | the antler servo's rear horn would sit where the roll servo sweeps: held at the horn only, the reason in the spec, an open item to test | |
+| 47 | Checks until 0 failing | W | 28, 10, 5, 0 with the jaw and antlers in | |
+| 48 | Rerun every broken design after a change | A | the bib's case stopped breaking anything once the bib was an oval: the case had to be re-aimed (moved into the thighs) | checks.md: rerun the cases after changing a part one is built on, not only after changing a check |
+| 49 | Train a walk (the user: "walking with trained model" by morning) | A | the user's standing rule is no long training on this laptop. Walking was a parametric trot tuned by a 20-minute CPU search in MuJoCo, and the RL setup was written to run elsewhere (`sim/TRAINING.md`). It's said as such | phases/2: what to deliver overnight when training is off-limits |
+| 50 | Rebuild the Fusion model in place, save a version, export | W | 14 links, 13 joints. The STEP has 127 solids, matching the 127 bodies exactly | |
+| 51 | `spec/gates.json` for a project's own gate lists | W | phases 3 and 4 list this repo's tools | |
+| 52 | The BOM, with what isn't confirmed under one heading | W | from duck-droids' listings (the same parts), every line "confirm before ordering"; the battery an open item with its size limit | |
 
 ## What the reindeer is now
 

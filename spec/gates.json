@@ -1,0 +1,8 @@
+{
+ "1": [],
+ "2": [["-I", "spec/robot.py"], ["-I", "tools/checks.py"], ["tools/sim_stand.py"]],
+ "3": [["-I", "spec/robot.py"], ["-I", "tools/checks.py"], ["-I", "tools/mass_model.py"], ["-I", "tools/assembly.py"]],
+ "4": [["-I", "tools/export_prints.py"], ["-I", "tools/make_docs.py"]],
+ "5": [],
+ "6": []
+}

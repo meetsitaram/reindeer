@@ -138,6 +138,18 @@ class Solids:
                 if g['role'] == 'shell':
                     cav = G.inner_of(g, WALL)
                     self.wall[(ln, i)] = self.geom[(ln, i)] - to_manifold(G.mesh_of(cav))
+        # shells printed as one piece (merge_into): neither has a wall inside the other (the reindeer's muzzle and cranium)
+        self.merged = {}
+        for ln, l in spec['links'].items():
+            idx = {g['name']: i for i, g in enumerate(l['geoms'])}
+            for i, g in enumerate(l['geoms']):
+                if g['role'] == 'shell' and g.get('merge_into') in idx:
+                    k = idx[g['merge_into']]
+                    self.merged.setdefault((ln, i), []).append((ln, k))
+                    self.merged.setdefault((ln, k), []).append((ln, i))
+        for key, others in self.merged.items():
+            for o in others:
+                self.wall[key] = self.wall[key] - self.geom[o]
         self.all, self.shell, self.rigid, self.hard = {}, {}, {}, {}
         for ln, l in spec['links'].items():
             idx = range(len(l['geoms']))
@@ -189,7 +201,7 @@ def measure(spec, S):
     G_ = lambda n: spec['links'][names[n][0]]['geoms'][names[n][1]]
     allv = np.vstack([m.to_mesh().vert_properties[:, :3] for (_, _, m) in names.values()])
     H = float(allv[:, 2].max())
-    head = [bb(n) for n in ('cranium', 'muzzle')]
+    head = [bb(n) for n in ('cranium', 'muzzle', 'jaw') if n in names]   # the chin is the jaw's, once it has one
     ears = [bb(n) for n in ('L ear', 'R ear')]
     rim = G_('L eye rim')
     body = bb('body')
@@ -354,6 +366,8 @@ def check_covers(spec, S, R, rep):
             if g['role'] != 'shell' or S.geom.get((ln, i)) is None:
                 continue
             skin = S.geom[(ln, i)] - to_manifold(G.mesh_of(G.inner_closed(g, WALL)))
+            for o in S.merged.get((ln, i), []):
+                skin = skin - S.geom[o]
             for la, ia, ga in acts:
                 if la != ln and not R.adjacent(la, ln):
                     continue
@@ -506,10 +520,11 @@ POSES = {
     # name: (angles (left side; mirrored unless the right is given), category). The body is lowered onto its hooves.
     'stand': ({}, 'continuous'),
     'crouch': ({'L_front_hip': 0.5, 'L_front_knee': -1.0, 'L_rear_hip': 0.5, 'L_rear_knee': -1.0}, 'continuous'),
-    'nod down': ({'neck_pitch': 0.27}, 'continuous'),
-    'look up': ({'neck_pitch': -0.30}, 'continuous'),
-    'head tilt, looking round': ({'head_roll': 0.35, 'head_yaw': 1.0}, 'continuous'),
-    'paw lifted (three legs)': ({'L_front_hip': -0.6, 'L_front_knee': 1.2, 'R_front_hip': 0.0, 'R_front_knee': 0.0}, 'peak'),
+    'nod down': ({'neck_pitch': 0.18}, 'continuous'),
+    'look up': ({'neck_pitch': -0.28}, 'continuous'),
+    'head tilt, looking round': ({'head_roll': 0.30, 'head_yaw': 1.0}, 'continuous'),
+    'chatting: mouth open, antlers back': ({'jaw': 0.45, 'antlers': -0.15, 'head_roll': 0.2}, 'continuous'),
+    'paw lifted (three legs)': ({'L_front_hip': -0.5, 'L_front_knee': 1.2, 'R_front_hip': 0.0, 'R_front_knee': 0.0}, 'peak'),
     'trot, diagonal pair down': ({'L_front_hip': -0.5, 'L_front_knee': 0.9, 'R_front_hip': 0.2, 'R_front_knee': -0.2,
                                   'R_rear_hip': -0.5, 'R_rear_knee': 0.9, 'L_rear_hip': 0.2, 'L_rear_knee': -0.2}, 'peak'),
 }
@@ -647,17 +662,18 @@ def break_spec(spec, case):
     elif case == 'floating':                              # the neck's bridge deleted: the yaw servo stands on nothing
         s['links']['neck']['geoms'] = [g for g in s['links']['neck']['geoms'] if g['name'] != 'neck bridge']
     elif case == 'mass':
-        find('body', 'battery 1S 1000 mAh (buy)')['mass'] += 0.5
+        find('body', 'battery 2S, at most 44 x 30 x 8 mm (buy)')['mass'] += 0.5
     elif case == 'poke':                                  # the battery pushed up through the body's back (not the Pi: it is marked
-        find('body', 'battery 1S 1000 mAh (buy)')['c'][2] += 0.015   # as seen from below, so the skin check skips it)
+        find('body', 'battery 2S, at most 44 x 30 x 8 mm (buy)')['c'][2] += 0.015   # as seen from below, so the skin check skips it)
     elif case == 'cover':                                 # the left front thigh shrunk round its servo
         for sec in find('L_front_thigh', 'L front thigh')['sections']:
             sec['a'] *= 0.7
     elif case == 'tip':                                   # 300 g hung 15 cm in front of the chest: it must tip
-        g = find('body', 'battery 1S 1000 mAh (buy)')
+        g = find('body', 'battery 2S, at most 44 x 30 x 8 mm (buy)')
         g['mass'] = 0.30
         g['c'][0] += 0.15
-    elif case == 'decal':                                 # the bib left uncut over the front thighs (round 7's miss)
+    elif case == 'decal':                                 # the bib moved back 8 mm, over the front thighs, and left uncut (round 7's miss)
+        find('body', 'bib')['c'][0] -= 0.008
         for g in s['links']['body']['geoms']:
             if g['role'] == 'cut' and 'bib' in g.get('targets', []):
                 g['targets'] = [t for t in g['targets'] if t != 'bib']

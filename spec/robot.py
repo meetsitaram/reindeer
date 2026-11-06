@@ -179,21 +179,19 @@ SB = [  # (x, cz, cy, a (half height), b (half width), n): back 0.45 H at the ru
     #   reference's 0.19: two XL330s a leg set the hip at 70 mm)
     (-0.066, 0.084, 0.0, 0.010, 0.015, 2.2),
     (-0.058, 0.0825, 0.0, 0.0240, 0.033, 2.4),
-    (-0.040, 0.0825, 0.0, 0.0255, 0.0395, 2.6),
-    (-0.015, 0.0805, 0.0, 0.0235, 0.0395, 2.6),
-    (0.000, 0.0785, 0.0, 0.0215, 0.0395, 2.6),
-    (0.025, 0.0745, 0.0, 0.0175, 0.0395, 2.6),
-    (0.045, 0.0725, 0.0, 0.0155, 0.0380, 2.4),   # round 6: the chest's top lower in front, so the muzzle can nod
-    (0.058, 0.0710, 0.0, 0.0120, 0.0300, 2.2),
-    (0.066, 0.0705, 0.0, 0.0060, 0.0160, 2.0),
+    (-0.040, 0.0830, 0.0, 0.0260, 0.0420, 2.3),   # round 8: fuller and rounder (2.6 read as a tube)
+    (-0.015, 0.0810, 0.0, 0.0240, 0.0425, 2.3),
+    (0.000, 0.0790, 0.0, 0.0220, 0.0425, 2.3),
+    (0.025, 0.0755, 0.0, 0.0185, 0.0420, 2.3),
+    (0.045, 0.0730, 0.0, 0.0160, 0.0395, 2.2),   # round 6: the chest's top lower in front, so the muzzle can nod
+    (0.058, 0.0715, 0.0, 0.0125, 0.0310, 2.1),
+    (0.066, 0.0710, 0.0, 0.0065, 0.0170, 2.0),
 ]
 
 body = [
     loft('body', SB, FAWN, along='x', load_bearing=True),   # the shell carries each hip's outer side (its boss): it is structure
     cut(box('body neck opening', (NX - 0.030, -0.0195, 0.080), (NX + 0.024, 0.0195, 0.13)), 'body'),
-    loft('bib', [(0.035, 0.075, 0.0, 0.012, 0.022, 2.0), (0.050, 0.074, 0.0, 0.015, 0.026, 2.0),
-                 (0.062, 0.074, 0.0, 0.010, 0.020, 2.0), (0.068, 0.0745, 0.0, 0.004, 0.010, 2.0)], WHITE, 'decal',
-         along='x', clip=((0.045, 0, 0), (1, 0, 0)), material='pla_skin'),
+    ell('bib', (0.0625, 0.0, 0.0745), (0.0060, 0.0170, 0.0120), WHITE, 'decal', material='pla_skin'),   # round 8: one clean oval on the chest
     # the tail, perky up at the rump (fixed: no room for a servo in the rump, round 5)
     ell('tail', (-0.068, 0.0, 0.104), (0.009, 0.008, 0.013), FAWN),
     ell('tail tip', (-0.072, 0.0, 0.113), (0.006, 0.006, 0.007), WHITE, 'decal'),
@@ -204,13 +202,13 @@ body = [
     cyl('keel rear disc', (XR, 0, ZH), 'y', 0.0105, 2 * KEEL, DARK, exposed=True),
     box('neck cradle floor', (NX - 0.0255, -0.0115, 0.0755), (NX + 0.0010, 0.0115, 0.0780), DARK, exposed=True),
     box('neck cradle back', (NX - 0.0275, -0.0115, 0.0755), (NX - 0.0245, 0.0115, 0.088), DARK, exposed=True),
-    box('battery post', (-0.020, -KEEL, 0.0760), (-0.016, KEEL, 0.0878), DARK, exposed=True),
-    box('battery tray', (-0.052, -0.023, 0.0868), (-0.016, 0.023, 0.0883), DARK, exposed=True),
+    box('battery post', (-0.020, -KEEL, 0.0760), (-0.016, KEEL, 0.0908), DARK, exposed=True),
+    box('battery tray', (-0.052, -0.023, 0.0898), (-0.016, 0.023, 0.0913), DARK, exposed=True),
     box('Pi Zero 2 W (buy)', (-0.015, -0.0325, 0.0605), (0.015, 0.0325, 0.0666), PCB, material='electronics', mass=0.011, exposed=True),   # under the keel, on standoffs
-    box('battery 1S 1000 mAh (buy)', (-0.050, -0.022, 0.0882), (-0.020, 0.022, 0.0962), CELL, material='cells', mass=0.020),
-    box('bus board (buy)', (-0.050, -0.021, 0.0961), (-0.020, 0.021, 0.0993), PCB, material='electronics', mass=0.008),   # size to confirm
+    box('battery 2S, at most 44 x 30 x 8 mm (buy)', (-0.050, -0.022, 0.0912), (-0.020, 0.022, 0.0992), CELL, material='cells', mass=0.020),
+    box('bus board (buy)', (-0.050, -0.021, 0.0991), (-0.020, 0.021, 0.1023), PCB, material='electronics', mass=0.008),   # size to confirm
 ]
-case, horn, rear = joint('neck_pitch', 'body', 'neck', (NX, 0.0145, ZNP), 'y', (-0.30, 0.27), out=+1, long='-x', exposed=True)   # round 6: -0.35 put the yaw servo in the back; past 0.27 the muzzle meets the bib
+case, horn, rear = joint('neck_pitch', 'body', 'neck', (NX, 0.0145, ZNP), 'y', (-0.28, 0.18), out=+1, long='-x', exposed=True)   # 0.18: the jaw's chin clear of the bib   # round 6: -0.35 put the yaw servo in the back; past 0.27 the muzzle meets the bib
 body.append(case)
 neck = [horn, rear]
 link('body', 0.25, body)
@@ -221,7 +219,7 @@ neck += [
     box('neck horn plate', (NX - 0.010, 0.0145, ZNP - 0.010), (NX + 0.010, 0.0175, BRIDGE[1]), FAWN, exposed=True),
     box('neck rear plate', (NX - 0.010, -0.0175, ZNP - 0.010), (NX + 0.010, -0.0145, BRIDGE[1]), FAWN, exposed=True),
     box('neck bridge', (NX - 0.010, -0.0175, BRIDGE[0]), (NX + 0.010, 0.0175, BRIDGE[1]), FAWN, exposed=True),
-    box('neck yaw seat', (NX - 0.026, -0.011, BRIDGE[0]), (NX - 0.009, 0.011, BRIDGE[1]), DARK, exposed=True),
+    box('neck yaw seat', (NX - 0.026, -0.011, BRIDGE[0]), (NX - 0.009, 0.011, BRIDGE[1]), FAWN, exposed=True),
 ]
 case, horn, rear = joint('head_yaw', 'neck', 'yawlink', (NX, 0.0, ZYAW), 'z', (-1.0, 1.0), out=+1, long='-x', exposed=True)
 neck.append(case)
@@ -232,7 +230,7 @@ YP = (ZYAW - 0.0005, ZYAW + 0.0025)
 yawl = [horn,
         box('yaw plate', (XROLL - 0.032, -0.0255, YP[0]), (XROLL - 0.001, 0.0105, YP[1]), DARK, exposed=True),
         box('roll rear wall', (XROLL - 0.032, -0.010, YP[0]), (XROLL - 0.029, 0.010, ZROLL + 0.010), DARK, exposed=True)]
-case, horn, rear = joint('head_roll', 'yawlink', 'head', (XROLL, 0.0, ZROLL), 'x', (-0.35, 0.35), out=+1, long='-y')
+case, horn, rear = joint('head_roll', 'yawlink', 'head', (XROLL, 0.0, ZROLL), 'x', (-0.30, 0.30), out=+1, long='-y')   # round 8: 0.35 met the neck plate (0.30: a 17 deg tilt)
 yawl += [case, rear]
 link('yawlink', 0.03, yawl)
 
@@ -267,9 +265,9 @@ for part, r, d, col in (('rim', 0.0132, 0.0, WHITE), ('iris', 0.0108, 0.0016, EY
 ear = lambda u, v, r: (u * K, HC[2] + (v - 0.130) * K, r * K)
 head = [horn,
         ell('cranium', HC, HR, FAWN),
-        ell('muzzle', MZ, MR, WHITE),
+        ell('muzzle', MZ, MR, WHITE, merge_into='cranium'),   # printed as one with the cranium: no wall between them
         ell('nose', (MZ[0] + MR[0] - 0.003, 0.0, MZ[2] + 0.0035 * K), (0.006 * K, 0.008 * K, 0.005 * K), DARKGREEN, 'decal'),
-        cut(box('head underside', (HC[0] - 0.07, -0.07, 0.06), (MZ[0] - 0.010, 0.07, HEAD_BOTTOM)), 'cranium', 'muzzle'),
+        cut(box('head underside', (HC[0] - 0.07, -0.07, 0.06), (HC[0] + 0.09, 0.07, HEAD_BOTTOM)), 'cranium', 'muzzle'),   # round 8: the muzzle stops at the mouth; the jaw is below
         cut(cyl('head neck opening', (NX, 0, HEAD_BOTTOM + 0.014), 'z', 0.034, 0.030), 'cranium', 'muzzle'),
         *eye,
         plate('L ear', HC[0] - 0.012 * K - 0.003, 0.006, [ear(0.035, 0.151, 0.0105), ear(0.055, 0.168, 0.0075)], FAWN, 'decal', axis='x'),
@@ -277,11 +275,49 @@ head = [horn,
         cap('L antler beam', hp(-0.010, 0.012, 0.158), hp(-0.026, 0.024, 0.212), 0.0062 * K, GREEN, 'decal', color_R=RED),
         cap('L antler tine 1', hp(-0.015, 0.016, 0.180), hp(-0.012, 0.036, 0.196), 0.0052 * K, GREEN, 'decal', color_R=RED),
         cap('L antler tine 2', hp(-0.020, 0.020, 0.196), hp(-0.019, 0.040, 0.212), 0.0050 * K, GREEN, 'decal', color_R=RED),
-        box('head bracket', (XROLL - 0.0005, -0.016, ZROLL - 0.011), (XROLL + 0.0025, 0.016, ZROLL + 0.012), DARK),
-        box('head crown post', (XROLL, -0.005, ZROLL + 0.010), (XROLL + 0.006, 0.005, HC[2] + HR[2] - 0.0015), DARK),
+        box('head bracket', (XROLL - 0.0005, -0.0135, ZROLL - 0.011), (XROLL + 0.0025, 0.0135, ZROLL + 0.012), DARK),   # round 8: narrower, clear of the antler servo; its crown post gone for the antlers' bar
         box('head face post', (XROLL + 0.002, -0.005, ZROLL - 0.008), (HC[0] + HR[0] - 0.0012, 0.005, ZROLL - 0.002), DARK),
         ]
-link('head', 0.14, head)
+# round 8 (the user: "there is no mouth action which is important"; "make the two antlers move together with another servo")
+# The mouth: the muzzle's lower part is a jaw on its own XL330, its case low in the face, its shaft across (y) behind the
+# muzzle, 2.9 mm clear of the yaw case's swept corners. The jaw hangs on two plates, the horn's and the rear horn's.
+XJ, ZJ = 0.067, 0.117   # (0.069: its plate met the eyes; (0.064, 0.119: its rear stood 5 mm into the neck's opening; (0.116: its case stood in the cranium's and the muzzle's walls)
+case, horn, rear = joint('jaw', 'head', 'jaw', (XJ, 0.0145, ZJ), 'y', (-0.05, 0.45), out=+1, long='-x', exposed=True)   # its rear 1.5 mm in the neck's opening: seen from below only
+head += [case,
+         box('jaw cradle', (XJ - 0.0245, -0.0115, ZJ + 0.0100), (XJ + 0.0080, 0.0115, ZJ + 0.0125), DARK, exposed=True),
+         box('jaw cradle post', (XJ - 0.022, -0.004, ZJ + 0.0120), (XJ - 0.016, 0.004, ZROLL - 0.0075), DARK, exposed=True),
+         cut(box('L jaw slot', (XJ - 0.016, 0.0130, 0.090), (XJ + 0.024, 0.0190, ZJ - 0.008)), 'muzzle', 'cranium')]
+jaw = [horn, rear,
+       plate('L jaw plate', 0.0145, 0.003, [(XJ, ZJ, 0.0095), (XJ + 0.008, 0.0985, 0.005)], DARK, exposed=True),   # seen in the mouth when it opens
+       loft('jaw', [(0.056, 0.0975, 0.0, 0.0025, 0.012, 2.2), (0.062, 0.0975, 0.0, 0.0050, 0.018, 2.2),   # its back low: behind the hinge it rises as the mouth opens
+                    (0.074, 0.0980, 0.0, 0.0060, 0.0205, 2.2), (0.087, 0.0990, 0.0, 0.0045, 0.0160, 2.2),
+                    (0.094, 0.1000, 0.0, 0.0015, 0.0070, 2.0)], WHITE, along='x', load_bearing=True),
+       ell('tongue', (0.073, 0.0, 0.1022), (0.011, 0.0095, 0.0011), '#B8303A', 'decal'),
+       ]
+# The antlers: one XL330 beside the roll servo, its shaft across (y); a bar from its horn up and over to both antlers'
+# bases, which come out through slots in the crown, each under a tuft of fur that moves with it. +/-0.15 rad: a nod of
+# the antlers, the slots 25 mm long.
+XA, ZA = 0.034, 0.1475   # (0.150: the horn plate's front stood out of the cranium)
+case, horn, rear = joint('antlers', 'head', 'antlers', (XA, 0.0415, ZA), 'y', (-0.15, 0.15), out=+1, long='-x')
+# held at the horn only: a plate on the rear horn would sit where the roll servo's case sweeps (13.8 mm round its axis); the
+# antlers are light (about 20 g): an open item to test on the printed head
+head += [case,
+         box('antler cradle', (XA - 0.0245, 0.0155, ZA - 0.0125), (XA + 0.0095, 0.0385, ZA - 0.0100), DARK),
+         box('antler cradle post', (XROLL, 0.0110, ZA - 0.0125), (XROLL + 0.004, 0.0170, ZA - 0.0035), DARK)]
+AB = hp(-0.010, 0.012, 0.158)            # the antler beam's base
+ant = [horn,
+       # the horn plate reaches forward past the servo's front; the arm climbs the face's inside to the bar over the crown
+       # (plates, not capsules: trimesh's thin capsules aren't closed solids)
+       plate('antler horn plate', 0.0415, 0.003, [(XA, ZA, 0.0090), (0.0475, ZA - 0.002, 0.003)], DARK),
+       plate('antler bar arm', 0.0455, 0.004, [(0.0425, ZA - 0.001, 0.003), (AB[1] + 0.001, AB[2] - 0.001, 0.003)], DARK, axis='x'),
+       box('antler bar', (AB[0] - 0.004, -AB[1] - 0.004, AB[2] - 0.004), (0.0495, AB[1] + 0.004, AB[2] + 0.002), DARK, exposed=True),   # seen through the slots, under the tufts
+       ]
+head += [cut(box('L antler slot', (AB[0] - 0.013, AB[1] - 0.0085, AB[2] - 0.004), (AB[0] + 0.013, AB[1] + 0.0085, AB[2] + 0.025)), 'cranium')]
+link('head', 0.16, [g for g in head if 'antler beam' not in g['name'] and 'antler tine' not in g['name']])
+ant += [g for g in head if 'antler beam' in g['name'] or 'antler tine' in g['name']]
+ant.append(ell('L antler burr', (AB[0], AB[1], 0.1838), (0.0140, 0.0098, 0.0030), '#7A4A22'))   # a lid over the slot, 1 mm above the crown: a darker burr, as an antler's base (round 8: a fawn disc read as a hat)
+link('jaw', 0.02, jaw)
+link('antlers', 0.03, ant)
 
 # ================================================================ legs: each servo rides in its own segment, its horn on the one above
 # The thigh holds the hip servo (horn inward, on the keel); the shin holds the knee servo (horn outward, on the thigh's
@@ -293,21 +329,22 @@ LC, LB = (LY[0] + LY[1]) / 2, (LY[1] - LY[0]) / 2
 def leg(pre, X, color_hoof, color_hoof_R):
     hip, knee = f'{pre}_hip', f'{pre}_knee'
     thigh, shin = f'{pre}_thigh', f'{pre}_shin'
-    case_h, horn_h, rear_h = joint(hip, 'body', thigh, (X, KEEL, ZH), 'y', (-0.6, 0.6), out=-1, long='-z', case_in='child', exposed=True)   # +/-0.6: a trot's 0.5, and the thigh clear of the body's slot
+    case_h, horn_h, rear_h = joint(hip, 'body', thigh, (X, KEEL, ZH), 'y', (-0.5, 0.5), out=-1, long='-z', case_in='child', exposed=True)   # +/-0.5: a trot's; past it the rounder thigh meets the Pi
     case_k, horn_k, rear_k = joint(knee, thigh, shin, (X, LY[1] + 0.0005, ZK), 'y', (-1.3, 1.3), out=+1, long='-z', case_in='child', exposed=True)
     n = pre.replace('_', ' ')
     LINKS['body']['geoms'] += [
         horn_h,
         # round 7: the bib too (Fusion's interference check found it over the front thighs; decals were in no collision check)
-        cut(cyl(f'{n} hip pocket', (X, LC, ZH), 'y', 0.0180, 0.030), 'body', 'bib'),
+        cut(cyl(f'{n} hip pocket', (X, LC, ZH), 'y', 0.0200, 0.030), 'body', 'bib'),   # round 8: the rounder thigh's top reaches 18.5 mm
         cut(box(f'{n} leg slot', (X - 0.034, 0.0025, 0.0), (X + 0.034, 0.0360, ZH)), 'body', 'bib'),
         # the rear horn's seat, fused into the body's side wall: the shell carries the leg's outer side (on_cover)
-        cyl(f'{n} hip boss', (X, (LY[1] + 0.0005 + 0.0385) / 2, ZH), 'y', 0.0075, 0.0385 - LY[1] - 0.0005, DARK, exposed=True),
+        cyl(f'{n} hip boss', (X, (LY[1] + 0.0005 + 0.0410) / 2, ZH), 'y', 0.0075, 0.0410 - LY[1] - 0.0005, FAWN, exposed=True),
         rear_h,
     ]
     th = [case_h, horn_k,
-          loft(f'{n} thigh', load_bearing=True, sections=[(ZH - 0.0245, X, LC, 0.0156, LB, 6.0), (ZH + 0.006, X, LC, 0.0156, LB, 6.0),
-                              (ZH + 0.0115, X, LC, 0.0110, LB, 3.0), (ZH + 0.0158, X, LC, 0.0045, LB - 0.004, 2.0)],
+          # round 8: rounder (n 4.5, 35 mm deep) round the same case: n 6 read as boxes
+          loft(f'{n} thigh', load_bearing=True, sections=[(ZH - 0.0245, X, LC, 0.0175, LB, 4.5), (ZH + 0.006, X, LC, 0.0175, LB, 4.5),
+                              (ZH + 0.0115, X, LC, 0.0120, LB, 3.0), (ZH + 0.0158, X, LC, 0.0045, LB - 0.004, 2.0)],
                color=FAWN, open=('bottom',)),
           cut(cyl(f'{n} thigh horn hole', (X, LY[0], ZH), 'y', 0.0095, 0.006), f'{n} thigh'),
           cut(cyl(f'{n} thigh rear horn hole', (X, LY[1], ZH), 'y', 0.0095, 0.006), f'{n} thigh'),
@@ -316,14 +353,19 @@ def leg(pre, X, color_hoof, color_hoof_R):
           box(f'{n} knee outer tab', (X - 0.006, LY[1] - 0.0010, 0.0460), (X + 0.006, LY[1] + 0.0010, 0.0525), FAWN, exposed=True),   # into the thigh's wall, above the shin's round top
           plate(f'{n} knee inner plate', 0.0005, 0.0020, [(X, ZK, 0.0095), (X, ZH - 0.028, 0.0105)], FAWN, exposed=True),
           box(f'{n} knee inner tab', (X - 0.006, 0.0005, 0.0460), (X + 0.006, 0.0035, 0.0525), FAWN, exposed=True),   # into the thigh's wall, above the shin's round top
+          cyl(f'{n} knee cap', (X, LY[1] + 0.0045, ZK), 'y', 0.0115, 0.002, FAWN, exposed=True),   # round 8: a round knee over the plate and horn
           rear_k]
     sh = [case_k,
-          loft(f'{n} shin', [(0.0015, X, LC, 0.0130, LB, 4.0), (0.012, X, LC, 0.0156, LB, 6.0), (ZK + 0.0080, X, LC, 0.0156, LB, 6.0),
-                             (ZK + 0.0120, X, LC, 0.0110, LB, 3.0), (ZK + 0.0158, X, LC, 0.0045, LB - 0.004, 2.0)], FAWN),
+          # its top stays within 17.5 mm of the knee, which the thigh's servo clears: boxy there (n 8), hidden by the knee caps
+          loft(f'{n} shin', [(0.0015, X, LC, 0.0150, LB, 4.0), (0.012, X, LC, 0.0172, LB, 4.5), (ZK + 0.0020, X, LC, 0.0172, LB, 4.5),
+                             (ZK + 0.0095, X, LC, 0.0147, LB, 8.0), (ZK + 0.0125, X, LC, 0.0110, LB, 3.0),
+                             (ZK + 0.0158, X, LC, 0.0045, LB - 0.004, 2.0)], FAWN),
           cut(cyl(f'{n} shin horn hole', (X, LY[1], ZK), 'y', 0.0095, 0.006), f'{n} shin'),
           cut(cyl(f'{n} shin rear horn hole', (X, LY[0], ZK), 'y', 0.0095, 0.006), f'{n} shin'),
-          loft(f'{n} hoof', [(0.0, X + 0.002, LC, 0.0145, LB + 0.001, 2.6), (0.006, X + 0.002, LC, 0.0165, LB + 0.0015, 2.6),
-                             (0.013, X + 0.001, LC, 0.0160, LB + 0.0012, 2.6)], color_hoof, 'decal', color_R=color_hoof_R,
+          # round 8: a domed hoof, wider than the leg, as the plush's
+          loft(f'{n} hoof', [(0.0, X + 0.002, LC, 0.0175, LB + 0.0012, 2.4), (0.007, X + 0.002, LC, 0.0195, LB + 0.0015, 2.4),
+                             (0.014, X + 0.0015, LC, 0.0190, LB + 0.0013, 2.4), (0.018, X + 0.001, LC, 0.0160, LB + 0.0005, 2.2)],
+               color_hoof, 'decal', color_R=color_hoof_R,
                material='pla_skin'),
           ]
     link(thigh, 0.03, th)

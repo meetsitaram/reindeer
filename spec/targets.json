@@ -46,6 +46,6 @@
    "src": "walking 5.0 s: rump to chest, head and tail left out"
   }
  },
- "mass_budget_kg": 0.65,
- "parts_goal": "11 servos, under 50 printed parts"
+ "mass_budget_kg": 0.72,
+ "parts_goal": "13 servos (round 8: a jaw and the antlers added), under 60 printed parts"
 }
