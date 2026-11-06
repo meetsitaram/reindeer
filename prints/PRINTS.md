@@ -34,7 +34,7 @@
 | head | L ear | #B87333 | 44 x 40 x 6 | 5.8 | 7.2 |
 | head | L inner ear | #1F8A3C | 31 x 30 x 1 | 0.6 | 0.7 |
 | head | head bracket | #3A3D42 | 27 x 23 x 3 | 1.9 | 2.3 |
-| head | head face post | #3A3D42 | 49 x 10 x 6 | 2.9 | 3.7 |
+| head | head face post | #3A3D42 | 48 x 10 x 6 | 2.8 | 3.5 |
 | head | jaw cradle | #3A3D42 | 33 x 23 x 2 | 1.9 | 2.3 |
 | head | jaw cradle post | #3A3D42 | 14 x 8 x 6 | 0.6 | 0.8 |
 | head | antler cradle | #3A3D42 | 34 x 23 x 2 | 1.9 | 2.4 |
@@ -44,10 +44,10 @@
 | head | R eye pupil | #08090B | 17 x 17 x 11 | 1.0 | 1.2 |
 | head | R ear | #B87333 | 44 x 40 x 6 | 5.8 | 7.2 |
 | head | R inner ear | #1F8A3C | 31 x 30 x 1 | 0.6 | 0.7 |
-| jaw | L jaw plate | #3A3D42 | 33 x 22 x 3 | 1.4 | 1.8 |
+| jaw | L jaw plate | #F3EFE6 | 33 x 22 x 3 | 1.4 | 1.8 |
 | jaw | jaw | #F3EFE6 | 41 x 38 x 12 | 5.2 | 6.4 |
 | jaw | tongue | #B8303A | 22 x 19 x 2 | 0.5 | 0.6 |
-| jaw | R jaw plate | #3A3D42 | 33 x 22 x 3 | 1.4 | 1.8 |
+| jaw | R jaw plate | #F3EFE6 | 33 x 22 x 3 | 1.4 | 1.8 |
 | antlers | antler horn plate | #3A3D42 | 26 x 18 x 3 | 1.0 | 1.2 |
 | antlers | antler bar arm | #3A3D42 | 34 x 29 x 4 | 1.0 | 1.2 |
 | antlers | antler bar | #3A3D42 | 36 x 30 x 6 | 6.5 | 8.0 |
